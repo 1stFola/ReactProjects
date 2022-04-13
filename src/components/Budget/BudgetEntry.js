@@ -53,7 +53,6 @@ const BudgetEntry = (props) => {
         </div>
         <button onClick={createBudget}>Enter</button>
         
-        {/* <button onClick={createBudget}>Enter</button> */}
     </div>
   )
 
@@ -64,7 +63,13 @@ export default BudgetEntry
 
 
 
+
+
+
 /*
+
+Tutorial by ANJOLA 
+
  cost Task = (props) => {
 
     const [t, setT] = useState("")

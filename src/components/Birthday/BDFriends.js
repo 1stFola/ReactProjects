@@ -6,9 +6,6 @@ import '../../BirthdayApp.css'
 function FriendList () {
 
 
-
-
-
     const [people, setPeople] = React.useState(books)
 
     const remove = (id) => {
@@ -43,7 +40,7 @@ return(
             )
         : 
         <div className='emptyList'>
-            <button onClick="window.location.reload(true)"  class="btnSuccess" > 
+            <button  class="btnSuccess" > 
             Click to refresh list
             
             </button>

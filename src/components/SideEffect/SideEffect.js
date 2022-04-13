@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 
 
+
 const SideEffect = () => {
     const [error, setError] = useState('')
     const [posts, setPosts] = useState([])
@@ -27,7 +28,7 @@ const SideEffect = () => {
     }, [])
     // useEffect(() => {....."the "fetch" promise or the "async" code"}, [.....dependency array]) THE PRIMARY CONSTRUCT OF A useEffect.
 
-  return (
+return (
     <div>
         {error ? <div>{error}</div> :
         posts.map(post => {

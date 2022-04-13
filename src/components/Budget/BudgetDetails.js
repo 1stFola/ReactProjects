@@ -15,10 +15,16 @@ const BudgetDetails = (props) => {
         setBalance(reversedBalance)
 
     }
+    // style={{overflowY:"auto", height:"70vh"
+
 
  return (
     <div className='budget-details-container'>
         <h1> Details  </h1>
+        
+        <section  style={{overflowY:"auto", height:"50vh"}} >
+
+
         {budget.length > 0  ?
         <table>
             <tr className='table-header'>
@@ -43,6 +49,8 @@ const BudgetDetails = (props) => {
             </tr>)}
         </table>             
         : "No data entry yet"}
+
+        </section>
        
     </div>
   )
