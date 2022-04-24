@@ -1,31 +1,45 @@
 import React, { useState } from 'react'
 import './BudgetBody.css'
 
+
 const BudgetEntry = (props) => {
-    let {budget, setBudget, balance, setBalance} = props 
+    let {budget, setBudget, balance, setBalance, setAllBudget} = props 
 
     const [input, setInput] = useState({budgetName: "", budgetAmount: "", budgetDescription: "", date: "" })
+
 
     const handleInput = (e) => {
 
     setInput ({...input, [e.target.name]: e.target.value})
 
 
+       
     }
 
+    
    const createBudget = () => {
+    //    let {budgetName, budgetAmount, budgetDescription} = input
+    //     if(Object.values({budgetName, budgetAmount, budgetDescription}).some(data => data === "" )){
+    //        return
+    //     }
+
         let budgetData = [{...input, date: Date.now() }, ...budget]
         let savedBudget = {...input}
 
 
+
         if (isNaN(savedBudget.budgetAmount)){
             alert("Input must be digits.. no commas, currency symbols etc.");
+            console.log(savedBudget.budgetAmount)
         } else
         if(!(balance-savedBudget.budgetAmount < 0)){
         setBudget(budgetData)
-
+        setAllBudget(budgetData)
+        
         let newBalance = balance - savedBudget.budgetAmount
+
         setBalance(newBalance)
+
 
     }
         else setBalance((initial) => {
@@ -33,8 +47,12 @@ const BudgetEntry = (props) => {
             return "Budget Limit Exceeded!"
 
         })
+
+
     
 }
+
+
 
 
     return (
@@ -45,7 +63,7 @@ const BudgetEntry = (props) => {
         </div>
         <div className='budgetEntry'>
             <p>Budget Amount</p>
-            <input name='budgetAmount' onChange={handleInput} />
+            <input name='budgetAmount' type="number" onChange={handleInput} />
         </div>
         <div className='budgetEntry'>
             <p>Name Description</p>
@@ -57,7 +75,7 @@ const BudgetEntry = (props) => {
   )
 
   
-}
+    }
 
 export default BudgetEntry
 

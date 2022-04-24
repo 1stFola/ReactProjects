@@ -16,15 +16,26 @@ import "./components/Budget/NewBugBalance.css"
 
 const Budget = (props) => {
     const [balance, setBalance] = useState(0)
-    let {show, setShow} = props
+    const [selectOpt, setSelectOpt] = useState("NGN")
+
+    const [budget, setBudget] = useState([])
+
+
+    let { owner} = props
+
+
+
+
+   
+
 
   return (
     <div className='budget-container'>
         {/* <BudgetBalance balance={balance} setBalance={setBalance} /> */}
         {/* <NewBugBalance balance={balance} setBalance={setBalance} show={show} setShow={setShow} /> */}
 
-        <NewBugBalance balance={balance} setBalance={setBalance}/>
-        <BudgetBody balance={balance} setBalance={setBalance}/>
+        <NewBugBalance budget={budget} setSelectOpt={setSelectOpt} balance={balance} setBalance={setBalance}/>
+        <BudgetBody budget={budget} setBudget={setBudget} selectOpt={selectOpt} owner={owner} balance={balance} setBalance={setBalance}/> 
         </div> 
   )
 } 

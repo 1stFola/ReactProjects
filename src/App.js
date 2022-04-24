@@ -3,41 +3,103 @@ import logo from './Assets/logo192.png';
 // import './MyApp.css';
 import Counter from './components/Counter';
 
-import Login from './Login';
 import Budget from './Budget';
 import React, { useState } from 'react';
 // import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import {BrowserRouter, Routes, Route,} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 
 // import BirthdayApp from './BirthdayApp'; // Notice: This brought in the pink css
 import SideEffect from './components/SideEffect/SideEffect';
 import Authentication from './Authentication';
+import Login from './components/Authentication/Login';
 
 
 
 
 function App() {
 
-  return (
-    //  <div className="App">
-     <div className="app-container">
+// const [show, setShow] = useState(false)
+    
+return (
 
-          <Budget />    
-          {/* <Authentication /> */}
+  <div className="app-container">
+  <Router> 
+  
+        <Switch>
+          <Route exact path="/">
+              <Authentication/>
+            </Route>
+  
+          <Route path="/dashboard/:identity">
+              <Budget />
+            </Route>   
+               
+       </Switch>
+  
+  </Router>
+  </div>
+      // {/* </div> */}
+    );
+  }
+  
+  export default App;
 
-         {/* <Login />     */}
 
-       {/* <BirthdayApp /> */}
+
+
+  //  const [owner, setOwner] = useState("") 
+
+//   return (
+
+// <div className="app-container">
+// <Router> 
+
+//       <Switch>
+//         <Route exact path="/">
+//             <Authentication  setOwner={setOwner} />
+//           </Route>
+
+//         <Route path="/dashboard/:identity">
+//             <Budget  owner={owner} />
+//           </Route>   
+             
+//      </Switch>
+
+// </Router>
+// </div>
+//     // {/* </div> */}
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+//   return (
+//     //  <div className="App">
+//      <div className="app-container">
+
+//           {/* <Budget />     */}
+
+//           <Router>
+//           <Authentication />
+//           </Router>
+          
+//          {/* <Login />     */}
+
+//        {/* <BirthdayApp /> */}
        
-        {/* <SideEffect /> */} 
+//         {/* <SideEffect /> */} 
      
-        {/* <Counter />  */}
-    </div>
-  );
-}
+//         {/* <Counter />  */}
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
 
 
 

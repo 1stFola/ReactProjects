@@ -15,7 +15,19 @@
     border-radius: 4px;
     flex-direction: column;
     display: flex;
-    padding: 15px;
+    padding: 62px;
+
+}
+
+.auth-body button{
+    height: 40px;
+    width: 100%;
+    border: 1px solid #4b0090;
+    padding: 1%;
+    font-weight: bold;
+    color: #4b0090;
+    font-size: 15px;
+
 
 }
 
