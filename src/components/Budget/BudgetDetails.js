@@ -6,7 +6,7 @@ import axios from "axios";
 
 
 const BudgetDetails = (props) => {
-    let { budget, setBudget , balance, setBalance, selectOpt, allBudget } = props 
+    let { budget, setBudget , balance, setBalance, selectOpt, allBudget, setAllBudget } = props
 
     const [input, setInput] = useState("")
 
@@ -34,6 +34,7 @@ const BudgetDetails = (props) => {
     const deleteRow =  (objectID, budgetAmount) => {
         let newObject = [...budget]
         setBudget(newObject.filter((data, index) => index !== objectID))
+        setAllBudget(newObject.filter((data, index) => index !== objectID))
         // show all of the data (value) for the index(s) that does not have the selected objectID 
 
         let reversedBalance = balance + budgetAmount

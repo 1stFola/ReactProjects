@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './BudgetBody.css'
 
 
+
+
 const BudgetEntry = (props) => {
     let {budget, setBudget, balance, setBalance, setAllBudget} = props 
 
@@ -80,7 +82,7 @@ const BudgetEntry = (props) => {
 export default BudgetEntry
 
 
-
+//Loop to see IF the any item ID we currently have in the state is equal to the ID that the action(payload) brings, do update, else, the items in the state should stay the same
 
 
 

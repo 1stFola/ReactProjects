@@ -28,7 +28,7 @@ const BudgetBody = (props) => {
         </div>
         <div className='budget-body-sectioned'>
         <BudgetEntry setAllBudget={setAllBudget} budget={budget} setBudget={setBudget} balance={balance} setBalance={setBalance}/>
-        <BudgetDetails allBudget={allBudget} selectOpt={selectOpt} budget ={budget} setBudget={setBudget} balance={balance} setBalance={setBalance}/>    
+        <BudgetDetails setAllBudget={setAllBudget}  allBudget={allBudget} selectOpt={selectOpt} budget ={budget} setBudget={setBudget} balance={balance} setBalance={setBalance}/>
     
         </div>
     </div>
