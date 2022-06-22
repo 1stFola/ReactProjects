@@ -26,7 +26,7 @@ const handleInput = (e) => {
 //   ).then(
 //       data => console.log(data)
 //   )
-//   }, []) // --> EMPTY DEPENCY ARRAY MEANS "DON'T RENDER AGAIN AFTER THE INITIAL PAGE LOADING"
+//   }, []) // --> EMPTY DEPENDENCY ARRAY MEANS "DON'T RENDER AGAIN AFTER THE INITIAL PAGE LOADING"
 
 useEffect(()=> {
   axios.get('https://v6.exchangerate-api.com/v6/b3843568e31ebe05ccec9cf5/latest/USD').then(
@@ -41,7 +41,7 @@ useEffect(() => {
   console.log("I Just UnMounted @ Budget balance")
 
   }
-}, [balance]) // --> FILLED DEPENCY ARRAY MEANS "LISTEN TO THE CHANGE THAT HAPPENED BASED ON THE CONTENT INSIDE THE DEPENDECY ARRAY AND RE-RENDER"
+}, [balance]) // --> FILLED DEPENDENCY ARRAY MEANS "LISTEN TO THE CHANGE THAT HAPPENED BASED ON THE CONTENT INSIDE THE DEPENDECY ARRAY AND RE-RENDER"
 
   // const handleInput = (e) => {
   //   setInput(e.target.value)
